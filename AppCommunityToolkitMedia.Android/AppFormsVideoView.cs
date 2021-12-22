@@ -40,11 +40,11 @@ namespace AppCommunityToolkitMedia.Droid.Renderers
                 }
 
                 /// Uncomment below to fix the <see cref="ObjectDisposedException"/>
-                //if (_Disposed)
-                //{
-                //    DDebug.WriteLine("View is disposed, ignored set video URI");
-                //    return;
-                //}
+                if (_Disposed)
+                {
+                    DDebug.WriteLine("View is disposed, ignored set video URI");
+                    return;
+                }
 
                 var ptr = typeof(VideoView).GetMethod("SetVideoURI", new[] { typeof(AUri), typeof(IDictionary<string, string>) }).MethodHandle.GetFunctionPointer();
                 var baseSetVideoURI = (Action<AUri, IDictionary<string, string>>)Activator.CreateInstance(typeof(Action<AUri, IDictionary<string, string>>), this, ptr);
