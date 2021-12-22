@@ -6,8 +6,9 @@ using Xamarin.Forms;
 using Android.Views;
 using Android.Widget;
 using AppCommunityToolkitMedia.Droid.Renderers;
+using AppCommunityToolkitMedia;
 
-[assembly: ExportRenderer(typeof(MediaElement), typeof(AppFixMediaElementRenderer))]
+[assembly: ExportRenderer(typeof(AppMediaElement), typeof(AppFixMediaElementRenderer))]
 namespace AppCommunityToolkitMedia.Droid.Renderers
 {
     /// <summary>

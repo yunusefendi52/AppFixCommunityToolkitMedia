@@ -12,11 +12,15 @@ namespace AppCommunityToolkitMedia
         {
             InitializeComponent();
 
-            var mediaElement = new MediaElement()
+            var mediaElement = new AppMediaElement()
             {
                 Source = MediaSource.FromUri("https://ia800201.us.archive.org/12/items/BigBuckBunny_328/BigBuckBunny_512kb.mp4"),
             };
             Content = mediaElement;
         }
+    }
+
+    public class AppMediaElement : MediaElement
+    {
     }
 }
